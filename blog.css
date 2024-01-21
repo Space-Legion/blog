@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Roboto Mono";
+    src: url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap"); 
+}
+
+body {
+    background-color: black;
+    font-family: "Roboto Mono", monospace;
+    color: white;
+    margin: 0;
+}
+
+hr {
+    background-color: #161719 !important;
+    height: 4px;
+    border: none;
+}
+
+#blog {
+    padding: 35px;
+    position: inherit;
+    text-align: center; /* Center text */
+}
+
+h1 {
+    font-size: 36px;
+    color: #2aa198;
+}
+
+#date {
+    color: #859900;
+}
+
+#content {
+    color: #eee;
+    line-height: 1.6;
+}
+
+#projects {
+    padding: 20px;
+    color: #2aa198;
+    text-align: center; /* Center text */
+}
+
+#cp {
+    padding: 20px;
+    color: #FFFF;
+    text-align: center; /* Center text */
+
+}
+
+
+
+
+#projects h2 {
+    font-size: 24px;
+    color: #2aa198;
+}
+
+#projects p {
+    margin: 5px 0; /* Adjust spacing between project names */
+}
+
+#footer {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center;
+    flex-direction: column; /* Adjust alignment */
+    padding: 15px;
+    background-color: #161719;
+    color: #2aa198;
+    text-align: center; /* Center text */
+}
+
+#footer span {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    #projects h2 {
+        font-size: 20px;
+    }
+}
