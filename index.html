@@ -155,4 +155,36 @@ NVME Admin command error:INVALID_FORMAT(410a)
 Success formatting namespace:ffffffff
 </pre>
 
-            <li><strong
+             </li>
+
+    <li><strong>Verify</strong><br>
+      <pre># hexdump /dev/nvme0n1
+0000000 0000 0000 0000 0000 0000 0000 0000 0000
+*
+3a38b2e000
+</pre>
+    </li>
+  </ol>
+
+  <p><strong>Notes</strong></p>
+  <ul>
+    <li>There are <a href="https://github.com/linux-nvme/nvme-cli/issues/84">reports</a> of
+      "NVME Admin command error:INVALID_OPCODE(2001)" on Samsung NVMe SSDs being resolved by suspending and waking
+      the computer as well.</li>
+    <li>The <a href="http://manpages.ubuntu.com/manpages/bionic/en/man1/nvme-format.1.html">manpage</a> on specifying
+      the character device (e.g., /dev/nvme0) vs the namespace block device (e.g., /dev/nvme0n1): If the character
+      device is given, the namespace identifier will default to 0xffffffff to send the format to all namespaces but
+      can be overridden to any namespace with the 'namespace-id' option. If the block device is given, the namespace
+      identifier will default to the namespace id of the block device given but can be overridden with the same
+      option.</li>
+    <li>For more information on NVMe character devices (e.g., /dev/nvme0) vs. namespace block devices (e.g.,
+      /dev/nvme0n1), see <a href="https://serverfault.com/questions/892134/why-is-there-both-character-device-and-block-device-for-nvme">Why is
+        there both character device and block device for nvme?</a> and <a href="https://narasimhan-v.github.io/2020/06/12/Managing-NVMe-Namespaces.html">Managing
+        NVMe Namespaces.</a></li>
+  </ul>
+
+  <p>Credits: <a href="https://github.com/z399">z399</a></p>
+
+</body>
+
+</html>
